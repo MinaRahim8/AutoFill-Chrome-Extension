@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "QBO Intake Autofill",
+  "version": "1.0.0",
+  "description": "Paste ANY LAB TEST NOW intake data and autofill it into a QuickBooks Online customer form.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://qbo.intuit.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "QBO Autofill"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://qbo.intuit.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
